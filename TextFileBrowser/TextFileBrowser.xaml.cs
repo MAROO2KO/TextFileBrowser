@@ -31,7 +31,7 @@ namespace TextFileBrowser
         {
             InitializeComponent();
 
-            // Získa výšku okna (monitoru) a vráti {ScreenHeight} do SearchTextFiles.xaml
+            // Získa výšku okna (monitoru) a vráti {ScreenHeight} do TextFileBrowser.xaml
             DataBind ui = new DataBind();
             DataContext = ui.GetScreenHeight();
         }
@@ -173,8 +173,8 @@ namespace TextFileBrowser
                         Dispatcher.Invoke(() => searchBtn.IsEnabled = false);
                         Dispatcher.Invoke(() => resultBox.Text = null);
                         Thread.CurrentThread.IsBackground = true;
-                        FileFolderSearch search = new FileFolderSearch();
-                        search.SearchFolder(path, key, recurse, this);
+                        FileFolderBrowse search = new FileFolderBrowse();
+                        search.BrowseFolder(path, key, recurse, this);
                         Dispatcher.Invoke(() => chooseFileBtn.IsEnabled = true);
                         Dispatcher.Invoke(() => searchBtn.IsEnabled = true);
                     }).Start();
@@ -191,8 +191,8 @@ namespace TextFileBrowser
                         Dispatcher.Invoke(() => searchBtn.IsEnabled = false);
                         Dispatcher.Invoke(() => resultBox.Text = null);
                         Thread.CurrentThread.IsBackground = true;
-                        FileFolderSearch search = new FileFolderSearch();
-                        search.SearchFile(path, key, this);
+                        FileFolderBrowse search = new FileFolderBrowse();
+                        search.BrowseFile(path, key, this);
                         Dispatcher.Invoke(() => chooseFileBtn.IsEnabled = true);
                         Dispatcher.Invoke(() => searchBtn.IsEnabled = true);
                     }).Start();

@@ -10,10 +10,10 @@ using System.Windows;
 namespace TextFileBrowser
 {
     // Metódy na prehľadávanie adresárov a súborov
-    class FileFolderSearch
+    class FileFolderBrowse
     {
         // Prehľadávanie adresára / podadresárov
-        public void SearchFolder(string path, string key, bool recurse, MainWindow mw)
+        public void BrowseFolder(string path, string key, bool recurse, MainWindow mw)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace TextFileBrowser
         }
 
         // Prehľadávanie súboru
-        public void SearchFile(string path, string key, MainWindow mw)
+        public void BrowseFile(string path, string key, MainWindow mw)
         {
             try
             {

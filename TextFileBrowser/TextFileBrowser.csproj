@@ -216,7 +216,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FileFolderSearch.cs" />
+    <Compile Include="FileFolderBrowse.cs" />
     <Compile Include="DataBind.cs" />
     <Compile Include="AppConfiguration.cs" />
     <Compile Include="TextFileBrowser.xaml.cs">

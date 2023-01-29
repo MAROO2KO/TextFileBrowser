@@ -13,7 +13,7 @@ namespace TextFileBrowser
         // Výška okna (monitoru) - využíva metóda GetScreenHeight()
         public double ScreenHeight { get; set; }
 
-        // Vráti hodnotu {ScreenHeight} do SearchTextFiles.xaml
+        // Vráti hodnotu {ScreenHeight} do TextFileBrowser.xaml
         public DataBind GetScreenHeight()
         {
             DataBind screenHeight = new DataBind()
