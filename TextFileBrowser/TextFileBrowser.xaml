@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextFileBrowser"
+        xmlns:gauge="http://schemas.actiprosoftware.com/winfx/xaml/gauge" x:Class="TextFileBrowser.MainWindow"
+        mc:Ignorable="d"
+        Title="SearchTextFiles" Height="400" Width="1000" MinHeight="400" MinWidth="1000" MaxHeight="{Binding ScreenHeight}" MaxWidth="1000" >
+    <Grid Margin="0,0,0,0">
+        <CheckBox x:Name="checkFolder" Content="Adresár" ToolTip="Ak chceme prehľadávať textové súbory v adresári" HorizontalAlignment="Left" Margin="373,14,0,0" VerticalAlignment="Top" Height="20" Width="Auto" RenderTransformOrigin="-0.7,0.65" Checked="checkFolder_Checked" Unchecked="checkFolder_Unchecked" />
+        <CheckBox x:Name="checkRecurse" IsEnabled="False" Content="Podadresáre" ToolTip="Ak chceme prehľadávať textové súbory aj v podadresároch" HorizontalAlignment="Left" Margin="373,34,0,0" VerticalAlignment="Top" Height="20" Width="Auto" RenderTransformOrigin="-0.7,0.65" />
+        <CheckBox x:Name="checkFile" Content="Súbor" ToolTip="Ak chceme prehľadávať konkrétny textový súbor" HorizontalAlignment="Left" Margin="527,22,0,0" VerticalAlignment="Top" Height="20" Width="Auto" RenderTransformOrigin="-0.7,0.65" Checked="checkFile_Checked" Unchecked="checkFile_Unchecked" />
+        <TextBlock HorizontalAlignment="Left" Margin="392,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="280" RenderTransformOrigin="0.545,0.486"><Run Text="Sem "/><Run Text="zadajte cestu k adresáru"/><Run Language="en-gb" Text=" / súboru:"/></TextBlock>
+        <TextBox x:Name="searchPath" HorizontalAlignment="Center" Margin="0,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="560" RenderTransformOrigin="0.491,0.606"/>
+        <Button x:Name="chooseFileBtn" IsEnabled="False" Content="Vybrať" HorizontalAlignment="Right" Margin="0,90,90,0" Height="23" Width="100" VerticalAlignment="Top" Click="chooseFileBtn_Click" />
+        <TextBlock HorizontalAlignment="Center" Margin="0,120,0,0" TextWrapping="Wrap" Text="Sem napíšte hľadaný výraz:" VerticalAlignment="Top" Height="23" Width="152" RenderTransformOrigin="0.545,0.486"/>
+        <TextBox x:Name="searchKey" HorizontalAlignment="Center" Height="23" Margin="0,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="560" />
+        <Button x:Name="searchBtn" IsEnabled="False" Content="Hľadať" HorizontalAlignment="Right" Margin="0,142,90,0" VerticalAlignment="Top" Width="100" Height="23" Click="searchBtn_Click"/>
+        <TextBox x:Name="resultBox" HorizontalAlignment="Center" Margin="0,200,0,30" TextWrapping="NoWrap" Text="" VerticalAlignment="Stretch" Width="560" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+        <Button x:Name="copyBtn" Content="Kopírovať" HorizontalAlignment="Right" Margin="0,217,90,0" VerticalAlignment="Top" Width="100" Height="23" RenderTransformOrigin="-0.121,-0.694" Click="copyBtn_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,13 @@
+<FileList>
+	<File Reference="ActiproSoftware.Gauge.Wpf.dll">
+		<ToolboxItems UIFramework="WPF" VSCategory="Actipro Gauge (for WPF)" BlendCategory="Actipro Gauge (for WPF)">
+
+			<Item Type="ActiproSoftware.Windows.Controls.Gauge.CircularGauge" />
+			<Item Type="ActiproSoftware.Windows.Controls.Gauge.DigitalGauge" />
+			<Item Type="ActiproSoftware.Windows.Controls.Gauge.FlipSwitch" />
+			<Item Type="ActiproSoftware.Windows.Controls.Gauge.Led" />
+			<Item Type="ActiproSoftware.Windows.Controls.Gauge.LinearGauge" />
+
+		</ToolboxItems>
+	</File>
+</FileList>
