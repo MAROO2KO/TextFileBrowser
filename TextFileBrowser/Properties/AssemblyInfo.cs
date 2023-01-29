@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("TextFileBrowser")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("MAROO2KO / Maroš Adamkovič")]
 [assembly: AssemblyProduct("TextFileBrowser")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]

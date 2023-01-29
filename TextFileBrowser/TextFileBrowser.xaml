@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TextFileBrowser"
         xmlns:gauge="http://schemas.actiprosoftware.com/winfx/xaml/gauge" x:Class="TextFileBrowser.MainWindow"
         mc:Ignorable="d"
-        Title="SearchTextFiles" Height="400" Width="1000" MinHeight="400" MinWidth="1000" MaxHeight="{Binding ScreenHeight}" MaxWidth="1000" >
+        Title="TextFileBrowser" Height="400" Width="1000" MinHeight="400" MinWidth="1000" MaxHeight="{Binding ScreenHeight}" MaxWidth="1000" >
     <Grid Margin="0,0,0,0">
         <CheckBox x:Name="checkFolder" Content="Adresár" ToolTip="Ak chceme prehľadávať textové súbory v adresári" HorizontalAlignment="Left" Margin="373,14,0,0" VerticalAlignment="Top" Height="20" Width="Auto" RenderTransformOrigin="-0.7,0.65" Checked="checkFolder_Checked" Unchecked="checkFolder_Unchecked" />
         <CheckBox x:Name="checkRecurse" IsEnabled="False" Content="Podadresáre" ToolTip="Ak chceme prehľadávať textové súbory aj v podadresároch" HorizontalAlignment="Left" Margin="373,34,0,0" VerticalAlignment="Top" Height="20" Width="Auto" RenderTransformOrigin="-0.7,0.65" />

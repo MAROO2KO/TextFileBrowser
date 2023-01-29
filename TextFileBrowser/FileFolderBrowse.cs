@@ -88,7 +88,7 @@ namespace TextFileBrowser
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "SearchTextFiles", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "TextFileBrowser", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -139,7 +139,7 @@ namespace TextFileBrowser
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "SearchTextFiles", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "TextFileBrowser", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TextFileBrowser"
   ],
-  "SelectedNode": "\\D:\\DEV\\GitHub\\PROD\\MAROO2KO\\text-file-browser",
+  "SelectedNode": "\\TextFileBrowser\\TextFileBrowser.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
