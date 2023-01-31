@@ -68,6 +68,7 @@ namespace TextFileBrowser
                     Thread.Sleep(1000);
                 }
 
+                Thread.Sleep(5000);
                 // Výsledok
                 if (fCont.Count == 0)
                 {
@@ -132,7 +133,7 @@ namespace TextFileBrowser
                 {
                     result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nenachádza v súbore " + file;
                 }
-                
+                Thread.Sleep(5000);
                 // Zobrazenie výsledku v resultBox v UI
                 mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { result }); ;
 

@@ -169,14 +169,11 @@ namespace TextFileBrowser
 
                     new Thread(() =>
                     {
-                        Dispatcher.Invoke(() => chooseFileBtn.IsEnabled = false);
-                        Dispatcher.Invoke(() => searchBtn.IsEnabled = false);
-                        Dispatcher.Invoke(() => resultBox.Text = null);
+                        uiElementsStartTask();
                         Thread.CurrentThread.IsBackground = true;
                         FileFolderBrowse search = new FileFolderBrowse();
                         search.BrowseFolder(path, key, recurse, this);
-                        Dispatcher.Invoke(() => chooseFileBtn.IsEnabled = true);
-                        Dispatcher.Invoke(() => searchBtn.IsEnabled = true);
+                        uiElementsEndTask();
                     }).Start();
                 }
                 // Ak iba v súbore
@@ -187,14 +184,11 @@ namespace TextFileBrowser
                    
                     new Thread(() =>
                     {
-                        Dispatcher.Invoke(() => chooseFileBtn.IsEnabled = false);
-                        Dispatcher.Invoke(() => searchBtn.IsEnabled = false);
-                        Dispatcher.Invoke(() => resultBox.Text = null);
+                        uiElementsStartTask();
                         Thread.CurrentThread.IsBackground = true;
                         FileFolderBrowse search = new FileFolderBrowse();
                         search.BrowseFile(path, key, this);
-                        Dispatcher.Invoke(() => chooseFileBtn.IsEnabled = true);
-                        Dispatcher.Invoke(() => searchBtn.IsEnabled = true);
+                        uiElementsEndTask();
                     }).Start();
                 }
             }
@@ -216,6 +210,30 @@ namespace TextFileBrowser
         public void updateResultBox(string result)
         {
             resultBox.Text = result;
+        }
+
+        // Správanie UI elementov pri štarte úlohy
+        private void uiElementsStartTask()
+        {
+            Dispatcher.Invoke(() => checkFolder.IsEnabled = false);
+            Dispatcher.Invoke(() => checkRecurse.IsEnabled = false);
+            Dispatcher.Invoke(() => checkFile.IsEnabled = false);
+            Dispatcher.Invoke(() => chooseFileBtn.IsEnabled = false);
+            Dispatcher.Invoke(() => searchBtn.IsEnabled = false);
+            Dispatcher.Invoke(() => resultBox.Text = null);
+        }
+
+        // Správanie UI elementov pri ukončení úlohy
+        private void uiElementsEndTask()
+        {
+            Dispatcher.Invoke(() => checkFolder.IsEnabled = true);
+            Dispatcher.Invoke(() => checkFile.IsEnabled = true);
+            Dispatcher.Invoke(() => chooseFileBtn.IsEnabled = true);
+            Dispatcher.Invoke(() => searchBtn.IsEnabled = true);
+            if(Dispatcher.Invoke(() => checkFolder.IsChecked == true))
+            {
+                Dispatcher.Invoke(() => checkRecurse.IsEnabled = true);
+            }
         }
     }
 }
