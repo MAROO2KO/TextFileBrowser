@@ -65,7 +65,7 @@ namespace TextFileBrowser
                     {
                         fCont.Add(file);
                     }
-                    //Thread.Sleep(1000);
+                    Thread.Sleep(1000);
                 }
 
                 // Výsledok
@@ -82,7 +82,7 @@ namespace TextFileBrowser
                     }
                     result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nachádza v súboroch:" + Environment.NewLine + fInfo;
                 }
-                Thread.Sleep(5000);
+                
                 // Zobrazenie výsledku v resultBox v UI
                 mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { result });
             }
@@ -132,7 +132,7 @@ namespace TextFileBrowser
                 {
                     result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nenachádza v súbore " + file;
                 }
-                Thread.Sleep(5000);
+                
                 // Zobrazenie výsledku v resultBox v UI
                 mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { result }); ;
 
