@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using System.Windows.Threading;
 using System.Windows;
-using MS.WindowsAPICodePack.Internal;
 
 
 namespace TextFileBrowser
@@ -124,21 +122,20 @@ namespace TextFileBrowser
 
                 // Prehľadávanie vstupného súboru
                 // Aktualizácia stavu v resultBox UI
-                string file = Path.GetFileName(path);
-                result = "Prehľadávam súbor " + file;
+                result = "Prehľadávam súbor " + path;
                 app.ResultBoxLog(result,mw);
  
                 // Proces hľadania
                 string content = File.ReadAllText(path);
                 if (content.Contains(key))
                 {
-                    result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nachádza v súbore " + file;
+                    result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nachádza v súbore " + path;
                 }
                 else
                 {
-                    result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nenachádza v súbore " + file;
+                    result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nenachádza v súbore " + path;
                 }
-                
+
                 // Zobrazenie výsledku v resultBox v UI
                 app.ResultBoxLog(result,mw);
             }
