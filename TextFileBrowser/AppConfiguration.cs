@@ -1,14 +1,17 @@
-﻿using System;
+﻿using MS.WindowsAPICodePack.Internal;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace TextFileBrowser
 {
-    // Metódy pre konfiguráciu a nastavenie parametrov aplikácie
+    // Konfigurácia a nastavenie parametrov aplikácie
     class AppConfiguration
     {
         // Získanie hodnoty z App.config na základe kľúča
@@ -16,6 +19,12 @@ namespace TextFileBrowser
         {
             string value = ConfigurationManager.AppSettings.Get(@key);
             return value;
+        }
+
+        // Zobrazenie hodnoty v resultBox v UI
+        public void ResultBoxLog(string s, MainWindow mw)
+        {
+            mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { s }); ;
         }
     }
 }

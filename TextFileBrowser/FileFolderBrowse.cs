@@ -5,11 +5,12 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Threading;
 using System.Windows;
+using MS.WindowsAPICodePack.Internal;
 
 
 namespace TextFileBrowser
 {
-    // Metódy na prehľadávanie adresárov a súborov
+    // Prehľadávanie adresárov a súborov
     class FileFolderBrowse
     {
         // Prehľadávanie adresára / podadresárov
@@ -17,6 +18,8 @@ namespace TextFileBrowser
         {
             try
             {
+                AppConfiguration app = new AppConfiguration();
+
                 string result;
 
                 // Kontroly                                              
@@ -58,17 +61,16 @@ namespace TextFileBrowser
                     // Aktualizácia stavu v resultBox UI
                     string fil = Path.GetFileName(file);
                     result = "Prehľadávam súbor " + file;
-                    mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { result }); ;
+                    app.ResultBoxLog(result,mw);
+                    
                     // Proces hľadania
                     string content = File.ReadAllText(file);
                     if (content.Contains(key))
                     {
                         fCont.Add(file);
                     }
-                    Thread.Sleep(1000);
                 }
 
-                Thread.Sleep(5000);
                 // Výsledok
                 if (fCont.Count == 0)
                 {
@@ -83,9 +85,9 @@ namespace TextFileBrowser
                     }
                     result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nachádza v súboroch:" + Environment.NewLine + fInfo;
                 }
-                
+
                 // Zobrazenie výsledku v resultBox v UI
-                mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { result });
+                app.ResultBoxLog(result,mw);
             }
             catch (Exception ex)
             {
@@ -98,6 +100,8 @@ namespace TextFileBrowser
         {
             try
             {
+                AppConfiguration app = new AppConfiguration();
+
                 string result;
 
                 // Kontroly
@@ -122,7 +126,8 @@ namespace TextFileBrowser
                 // Aktualizácia stavu v resultBox UI
                 string file = Path.GetFileName(path);
                 result = "Prehľadávam súbor " + file;
-                mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { result }); ;
+                app.ResultBoxLog(result,mw);
+ 
                 // Proces hľadania
                 string content = File.ReadAllText(path);
                 if (content.Contains(key))
@@ -133,10 +138,9 @@ namespace TextFileBrowser
                 {
                     result = "Hľadaný výraz " + "\"" + key + "\"" + " sa nenachádza v súbore " + file;
                 }
-                Thread.Sleep(5000);
+                
                 // Zobrazenie výsledku v resultBox v UI
-                mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { result }); ;
-
+                app.ResultBoxLog(result,mw);
             }
             catch (Exception ex)
             {

@@ -24,8 +24,7 @@ namespace TextFileBrowser
 {
     public partial class MainWindow : Window
     {
-        // Callback pre zapisovanie výsledku do resultBox
-        public delegate void resultToResultBox(string result);
+        public delegate void resultToResultBox(string result); // Callback pre zapisovanie výsledku do resultBox
 
         public MainWindow()
         {
@@ -35,7 +34,6 @@ namespace TextFileBrowser
             DataBind ui = new DataBind();
             DataContext = ui.GetScreenHeight();
         }
-
 
         // Checkboxy
         // Ak sa zaškrtne checkbox Adresár
@@ -139,6 +137,8 @@ namespace TextFileBrowser
             }
         }
 
+        
+
         // Spustenie prehľadávania, button Hľadať
         private void searchBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -167,29 +167,27 @@ namespace TextFileBrowser
                         recurse = false;
                     }
 
-                    new Thread(() =>
+                    Task.Factory.StartNew(() =>
                     {
                         uiElementsStartTask();
-                        Thread.CurrentThread.IsBackground = true;
                         FileFolderBrowse search = new FileFolderBrowse();
                         search.BrowseFolder(path, key, recurse, this);
                         uiElementsEndTask();
-                    }).Start();
+                    });
                 }
                 // Ak iba v súbore
                 else
                 {
                     string path = searchPath.Text;
                     string key = searchKey.Text;
-                   
-                    new Thread(() =>
+
+                    Task.Factory.StartNew(() =>
                     {
                         uiElementsStartTask();
-                        Thread.CurrentThread.IsBackground = true;
                         FileFolderBrowse search = new FileFolderBrowse();
                         search.BrowseFile(path, key, this);
                         uiElementsEndTask();
-                    }).Start();
+                    });
                 }
             }
             catch (Exception ex)
