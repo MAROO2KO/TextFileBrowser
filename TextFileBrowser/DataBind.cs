@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace TextFileBrowser
 {
-    // Metódy pre získavannie obsahu pre UI - DataContext
+    // Metódy pre získavanie obsahu pre UI - DataContext
     class DataBind
     {
         // Výška okna (monitoru) - využíva metóda GetScreenHeight()

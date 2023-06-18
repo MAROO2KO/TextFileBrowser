@@ -17,7 +17,7 @@ namespace TextFileBrowser
         // Zobrazenie hodnoty v resultBox v UI
         public void ResultBoxLog(string s, MainWindow mw)
         {
-            mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { s }); ;
+            mw.Dispatcher.BeginInvoke(new MainWindow.resultToResultBox(mw.updateResultBox), DispatcherPriority.Render, new object[] { s });
         }
     }
 }
