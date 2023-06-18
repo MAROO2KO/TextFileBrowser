@@ -1,7 +1,7 @@
-# text-file-browser
+# TextFileBrowser
 
-Aplikácia slúi na rıchle vyh¾adávanie k¾úèového slova v textovıch súboroch.
+AplikÃ¡cia slÃºÅ¾i na rÃ½chle vyhÄ¾adÃ¡vanie kÄ¾ÃºÄovÃ©ho slova v textovÃ½ch sÃºboroch.
 
-Aplikácia vie naèíta adresár aj s podadresármi a preh¾adá všetky textové súbory, ktoré sa v nich nachádzajú,
-ak sa v niektorom súbore nachádza h¾adanı vıraz, vypíše zhodu.
-Taktie vie aplikácia naèíta iba jeden konkrétny textovı súbor, a zhodu h¾adá iba v tomto súbore. 
+AplikÃ¡cia vie naÄÃ­taÅ¥ adresÃ¡r aj s podadresÃ¡rmi a prehÄ¾adÃ¡ vÅ¡etky textovÃ© sÃºbory, ktorÃ© sa v nich nachÃ¡dzajÃº,
+ak sa v niektorom sÃºbore nachÃ¡dza hÄ¾adanÃ½ vÃ½raz, vypÃ­Å¡e zhodu.
+TaktieÅ¾ vie aplikÃ¡cia naÄÃ­taÅ¥ iba jeden konkrÃ©tny textovÃ½ sÃºbor, a zhodu hÄ¾adÃ¡ iba v tomto sÃºbore. 
